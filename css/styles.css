@@ -7,6 +7,21 @@
 	left: 0;
 }
 
+/*NAVBAR STYLES*/
+.navbar-default {
+    background-color: #403b3b;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #ffffff;
+    color: #403b3b;
+    border-radius: 10px;
+}
+
 .info {
     padding: 6px 8px;
     font: 14px/16px Arial, Helvetica, sans-serif;
