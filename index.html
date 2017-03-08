@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <title>miBA</title>
+  <meta name="description" content="Socioeconomic variables visualization for Buenos Aires City by census block">
+  <meta name="fdg224" content="SitePoint">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -16,6 +17,101 @@
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- NAVBAR BEGINS -->
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">BAdata</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+      <!-- LINK TO CENSUS DATA SOURCE -->       
+          <li><a href="http://200.51.91.245/argbin/RpWebEngine.exe/PortalAction?&MODE=MAIN&BASE=CPV2010B&MAIN=WebServerMain.inl" target="_blank">Source</a></li>
+          <li><a href="#">Hide variables</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>Comune 1</li>
+              <li><a href="#">Comune 1</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!-- NAVBAR ENDS -->
+
+
+    <!-- Boostrap Column Layout -->
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-3">
+      <!-- PANEL BEGINS -->
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Panel heading</div>
+          <div class="panel-body">
+                <p>...</p>
+              </div>
+
+        <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+      <!-- PANEL ENDS -->
+        </div>
+
+        <div class="col-md-9">
+          <h2>Heading</h2>
+  <div id="mapContainer">
+    <script src="js/map.js"></script>
+    <script src="data/data.js"></script>
+    <script src="js/scripts.js"></script>
+  </div>
+
+       </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>© 2016 Company, Inc.</p>
+      </footer>
+    </div>
+<!-- End Boostrap Column Layout-->
+
+
+
+
+ 
+  <!-- 
+  -->
+
 </body>
 </html>
