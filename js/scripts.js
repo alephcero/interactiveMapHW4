@@ -82,7 +82,7 @@ info.update = function (props) {
         '<b> Comune: </b>' + props.Comune + '<br />' + 
         '<b> % of Head of household with college education: </b>' + props.University  + '<br />' +
         '<b> Quantile: </b>' + props.q  + '<br />'
-        : 'Hover over a state');
+        : 'Hover over a block');
 };
 
 
