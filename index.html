@@ -9,6 +9,7 @@
   <meta name="fdg224" content="SitePoint">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.8/semantic.min.css">
   <link rel="stylesheet" href="css/styles.css" />
 
   <!--[if lt IE 9]>
@@ -20,6 +21,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.8/semantic.min.js"></script>
 <!-- NAVBAR BEGINS -->
 
   <nav class="navbar navbar-default">
@@ -79,20 +81,24 @@
       <!-- PANEL BEGINS -->
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">Panel heading</div>
+        <div class="panel-heading">ABOUT</div>
           <div class="panel-body">
                 <p>This map shows the data from the <a href ="https://es.wikipedia.org/wiki/Censo_argentino_de_2010" target="_blank">2010 Argentine Census</a> for Buenos Aires City at census block level. The census block is the smallest geographical unit for which the national census allows data query. You can extract this information by yourself using the <b>Source</b> link above. </p>
               </div>
 
-        <!-- List group -->
+        <!-- List group ICONOS FROM HERE
+http://semantic-ui.com/elements/icon.html#user-actions
+        -->
           <ul class="list-group">
-            <li class="list-group-item">Head of household with college education (%)</li>
-            <li class="list-group-item">Var 2</li>
+            <li class="list-group-item"><button class="ui right labeled icon button" id='buttonEduc'><i class="student icon"></i></i>Head of household with college education (%)</button></li>
+            <li class="list-group-item"><button class="ui right labeled icon button" id='buttonVar2'><i class="right arrow icon"></i>Next</button></li>
           </ul>
+
         </div>
       <!-- PANEL ENDS -->
-        </div>
 
+        </div>
+      <!-- MAP BEGINS -->
         <div class="col-md-9">
           <div id="mapContainer">
             <script src="js/map.js"></script>
@@ -101,6 +107,8 @@
           </div>
 
        </div>
+      <!-- MAP ENDS -->
+
       </div>
     </div>
 <!-- End Boostrap Column Layout-->
