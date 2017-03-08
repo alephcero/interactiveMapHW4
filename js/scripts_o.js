@@ -1,5 +1,5 @@
 var geojson;
-var currentMap = 'Empty'; 
+
 
 //Coropleth function
 function getColor(d) {
@@ -18,9 +18,9 @@ function getColor(d) {
 }
 
 //Style function that takes the Coropleth 
-function style(feature,propiedad) {
+function style(feature) {
     return {
-        fillColor: getColor(propiedad),//takes the property of the feature as parameter
+        fillColor: getColor(feature.properties.q),
         weight: .5,
         opacity: 1,
         color: 'white',
@@ -48,13 +48,7 @@ function highlightFeature(e) {
 }
 
 function resetHighlight(e) {
-    var layer = e.target;
-
-    //if for the property that we wan to reset
-    if (currentMap == 'Education') {var propReset = layer.feature.properties.q}
-    if (currentMap == 'Comune') {var propReset = layer.feature.properties.Comune}
-
-    layer.setStyle(style(layer.feature,propReset));
+    geojson.resetStyle(e.target);
     info.update();
 }
 
@@ -88,9 +82,7 @@ info.update = function (props) {
         '<b> Comune: </b>' + props.Comune + '<br />' + 
         '<b> % of Head of household with college education: </b>' + props.University  + '<br />' +
         '<b> Quantile: </b>' + props.q  + '<br />'
-        : 'Hover over a state');
-
-    //FALTA PONER IN IF ACA PAR DAR METRICAS DIFERENTES PARA CADA currentMap, SI ES empty NADA DE LO ABAJO
+        : 'Hover over a block');
 };
 
 
@@ -122,26 +114,3 @@ geojson = L.geoJson(tablaDeDatos,{
 geojson.addTo(map);
 info.addTo(map);
 legend.addTo(map);
-
-
-//listener with property of the feature as a parameter
-
-$('#buttonVar2').on('click', function(){
-    //set the current visualization we are dealing with
-    currentMap = 'Comune'; 
-
-    geojson.eachLayer(function (layer) {
-       layer.setStyle(style(layer.feature,layer.feature.properties.Comune));
-       
-       //console.log(layer.feature.properties.Comune)  
-    });
-});
-
-$('#buttonEduc').on('click', function(){
-    currentMap = 'Education';
-
-    geojson.eachLayer(function (layer) {
-       layer.setStyle(style(layer.feature,layer.feature.properties.q));
-       //console.log(layer.feature.properties.Comune)  
-    });
-});
