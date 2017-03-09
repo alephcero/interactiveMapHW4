@@ -51,8 +51,8 @@ function resetHighlight(e) {
     var layer = e.target;
 
     //if for the property that we wan to reset
-    if (currentMap == 'Education') {var propReset = layer.feature.properties.q}
-    if (currentMap == 'Comune') {var propReset = layer.feature.properties.Comune}
+    if (currentMap == 'Education') {var propReset = layer.feature.properties.P19_q}
+    if (currentMap == 'Inmigration') {var propReset = layer.feature.properties.P05_q}
 
     layer.setStyle(style(layer.feature,propReset));
     info.update();
@@ -86,8 +86,8 @@ info.update = function (props) {
     this._div.innerHTML = '<h4>Census Block Information</h4>' +  (props ?
         '<b> Block ID: </b>' + props.REDCODE + '<br />' + 
         '<b> Comune: </b>' + props.Comune + '<br />' + 
-        '<b> % of Head of household with college education: </b>' + props.University  + '<br />' +
-        '<b> Quantile: </b>' + props.q  + '<br />'
+        '<b> % of Head of household with college education: </b>' + props.P19_p  + '<br />' +
+        '<b> Quantile: </b>' + props.P19_q  + '<br />'
         : 'Hover over a state');
 
     //FALTA PONER IN IF ACA PAR DAR METRICAS DIFERENTES PARA CADA currentMap, SI ES empty NADA DE LO ABAJO
@@ -128,10 +128,10 @@ legend.addTo(map);
 
 $('#buttonVar2').on('click', function(){
     //set the current visualization we are dealing with
-    currentMap = 'Comune'; 
+    currentMap = 'Inmigration'; 
 
     geojson.eachLayer(function (layer) {
-       layer.setStyle(style(layer.feature,layer.feature.properties.Comune));
+       layer.setStyle(style(layer.feature,layer.feature.properties.P05_q));
        
        //console.log(layer.feature.properties.Comune)  
     });
@@ -141,7 +141,7 @@ $('#buttonEduc').on('click', function(){
     currentMap = 'Education';
 
     geojson.eachLayer(function (layer) {
-       layer.setStyle(style(layer.feature,layer.feature.properties.q));
+       layer.setStyle(style(layer.feature,layer.feature.properties.P19_q));
        //console.log(layer.feature.properties.Comune)  
     });
 });

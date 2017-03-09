@@ -12,4 +12,5 @@ def dbf2DF(dbfile, upper=True): #Reads in DBF files and returns Pandas DF
     d = {col: db.by_col(col) for col in db.header} #Convert dbf to dictionary
     pandasDF = pd.DataFrame(db[:]) #Convert to Pandas DF
     pandasDF.columns=db.header
+    pandasDF.dropna(inplace=True)
     return pandasDF
